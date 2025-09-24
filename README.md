@@ -70,6 +70,7 @@ Metrics: Accuracy, Weighted F1-score
 
 ## 📊 Results
 ✅ Test Accuracy: 95.11%
+
 ✅ Weighted F1-score: 95.09%
 
 The model performs robustly and generalizes well to unseen traffic sign images.
@@ -119,7 +120,7 @@ Caution signs (Slippery road, Pedestrians, Children, Animals, etc.)
 
 Directional signs (Turn left/right, Roundabout, Ahead only, etc.)
 
-📁 Repository Structure
+## 📁 Repository Structure
 
 Copy code
 
