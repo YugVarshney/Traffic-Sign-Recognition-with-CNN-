@@ -19,13 +19,12 @@ Download and unzip the dataset:
 
 !kaggle datasets download -d meowmeowmeowmeowmeow/gtsrb-german-traffic-sign
 !unzip gtsrb-german-traffic-sign.zip -d dataset/
-⚙️ Installation
+
+## ⚙️ Installation
 Install dependencies before running the notebook:
 
-bash
-Copy code
 !pip install tensorflow==2.19.1 pandas scikit-learn matplotlib kaggle
-🏗️ Project Workflow
+## 🏗️ Project Workflow
 Load Dataset
 
 Train images are loaded from dataset/Train/ with 43 class folders.
@@ -44,7 +43,7 @@ Data Augmentation
 
 Rotation, zoom, shift, shear, and fill-mode transformations.
 
-Model Architecture
+## Model Architecture
 A Convolutional Neural Network (CNN) with:
 
 3 Convolution + MaxPooling layers
@@ -69,37 +68,33 @@ Evaluation
 
 Metrics: Accuracy, Weighted F1-score
 
-📊 Results
+## 📊 Results
 ✅ Test Accuracy: 95.11%
-
 ✅ Weighted F1-score: 95.09%
 
 The model performs robustly and generalizes well to unseen traffic sign images.
 
-🚀 Usage
+## 🚀 Usage
 Training
-python
-Copy code
 history = model.fit(
     aug.flow(X_train, y_train, batch_size=32),
     epochs=15,
     validation_data=(X_val, y_val)
 )
-Save Model
-python
-Copy code
+### Save Model
+
 model.save('traffic_sign_model.h5')
-Evaluate
-python
-Copy code
+
+### Evaluate
+
 from sklearn.metrics import accuracy_score, f1_score
 
 y_pred = np.argmax(model.predict(X_test), axis=-1)
 print("Test Accuracy:", accuracy_score(labels_test, y_pred))
 print("Weighted F1-score:", f1_score(labels_test, y_pred, average='weighted'))
-Predict Single Image
-python
-Copy code
+
+### Predict Single Image
+
 from PIL import Image
 import numpy as np
 
